@@ -1,0 +1,87 @@
+body {
+	background:linear-gradient(to right, #F8F9F9, #ABB2B9); 
+	display: flex;
+	justify-content: center;
+}
+#cloud {
+	position: fixed;
+	bottom: 0;
+	left: 0; 
+	opacity: .8;
+	z-index: 1;
+}
+#rocket img {
+	width: 150px;
+	z-index: 10;
+	bottom: 0;
+  position: absolute;
+  animation:  
+    nudge 1s linear infinite,
+    MoveUp 1s linear infinite;
+}
+#fire img {
+	animation: 1s fadeIn linear infinite,
+						MoveUpFire 1s linear infinite,
+						nudge 1s linear infinite;
+	visibility: hidden;
+	width: 75px;
+	position: absolute;
+	z-index: 8;
+	bottom: 0;
+	left: 430px;
+
+}
+@keyframes MoveUpFire {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 100px;
+  }
+  80% {
+  	bottom: 200px;
+  }
+  100% {
+    bottom: 800px;
+  }
+}
+@keyframes fadeIn {
+  50% {
+    visibility: hidden;
+  }
+  80% {
+    visibility: visible;
+    bottom: 250px;
+  }
+}
+@keyframes MoveUp {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 200px;
+  }
+  80% {
+  	bottom: 300px;
+  }
+  100% {
+    bottom: 800px;
+  }
+}
+@keyframes nudge {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  
+  50% {
+    transform: translate(10px, 0);
+  }
+  
+  80% {
+    transform: translate(-10px, 0);
+  }
+}
+#rocket {
+	width: 200px;
+	height: 20%;
+}
