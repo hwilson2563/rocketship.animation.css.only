@@ -1,7 +1,6 @@
 body {
 	background:linear-gradient(to right, #F8F9F9, #ABB2B9); 
-	display: flex;
-	justify-content: center;
+	
 }
 #cloud {
 	position: fixed;
@@ -14,21 +13,23 @@ body {
 	width: 150px;
 	z-index: 10;
 	bottom: 0;
-  position: absolute;
+  position:absolute;
+  left: 50%;
+transform: translate(-50%, -50%);
   animation:  
-    nudge 1s linear infinite,
-    MoveUp 1s linear infinite;
+       MoveUp 1s linear infinite;
 }
 #fire img {
 	animation: 1s fadeIn linear infinite,
-						MoveUpFire 1s linear infinite,
-						nudge 1s linear infinite;
+						MoveUpFire 1s linear infinite;
 	visibility: hidden;
 	width: 75px;
 	position: absolute;
 	z-index: 8;
 	bottom: 0;
-	left: 430px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
 
 }
 @keyframes MoveUpFire {
@@ -36,23 +37,30 @@ body {
     bottom: 0;
   }
   50% {
-    bottom: 100px;
+    bottom: 200px;
   }
   80% {
-  	bottom: 200px;
+  	bottom: 265px;
   }
   100% {
-    bottom: 800px;
+    bottom: 500px;
   }
 }
 @keyframes fadeIn {
   50% {
     visibility: hidden;
   }
+  70% {
+    visibility: visible;
+    bottom: 150px;
+
+  }
   80% {
     visibility: visible;
     bottom: 250px;
+    opacity: .5;
   }
+
 }
 @keyframes MoveUp {
   0% {
@@ -65,7 +73,7 @@ body {
   	bottom: 300px;
   }
   100% {
-    bottom: 800px;
+    bottom: 500px;
   }
 }
 @keyframes nudge {
